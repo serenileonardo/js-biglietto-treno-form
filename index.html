@@ -5,70 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="container">
         <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
-        <form>
-            <div class="form-input-container">
-                <div class="input-container">
-                    <span>Nome e cognome</span>
-                    <input type="text" class="username" />
-                </div>
 
-                <div class="input-container">
-                    <span>Km da percorrere</span>
-                    <input type="text" class="input-km" />
-                </div>
+        <div class="form-box">
+            <label>Nome Cognome</label>
+            <input id="nome" type="text">
 
-                <div class="input-container">
-                    <span>Fascia d'età</span>
-                    <input type="text" class="input-age" />
-                </div>
-            </div>
+            <label>Km da percorrere</label>
+            <input id="km" type="number">
 
-            <div class="btn-container">
-                <button>Acquista</button>
-                <button>Annulla</button>
-            </div>
-            <div class="finalprice"></div>
-        </form>
-    </div>
+            <label>Fascia d'età</label>
+            <select id="eta">
+                <option value="adulto">Maggiorenne</option>
+                <option value="minore">Minorenne</option>
+                <option value="senior">Over 65</option>
+            </select>
 
-    <div class="hidden-ticket">
-        <h2>IL TUO BIGLIETTO</h2>
-        <div class="ticket-container">
-            <h3>DETTAGLIO PASSEGGERO</h3>
-            <div class="ticket">
-                <div class="ticket-name">
-                    <h4>NOME PASSEGGERO</h4>
-                    <span class="username-ticket"></span>
-                </div>
-                <div class="ticket-details">
-                    <div class="ticket-detail">
-                        <span class="discount">Offerta</span>
-                        <span class="ticketdiscount"></span>
-                    </div>
-                    <div class="ticket-detail">
-                        <span class="infoticket">Carrozza</span>
-                        <span class="user-info-ticket">5</span>
-                    </div>
-                    <div class="ticket-detail">
-                        <span class="discount">Codice Cp</span>
-                        <span class="typeofticket">262626</span>
-                    </div>
-                    <div class="ticket-detail">
-                        <span class="price">Costo biglietto</span>
-                        <span class="user-price"></span>
-                    </div>
-                </div>
-            </div>
+            <button id="genera">Genera</button>
+            <button id="annulla">Annulla</button>
+        </div>
+
+        <div class="ticket" id="ticket" style="display:none;">
+            <h2>IL TUO BIGLIETTO</h2>
+
+            <p><strong>Nome passeggero:</strong> <span id="outNome"></span></p>
+            <p><strong>Offerta:</strong> <span id="outOfferta"></span></p>
+            <p><strong>Carrozza:</strong> <span id="outCarrozza"></span></p>
+            <p><strong>Codice CP:</strong> <span id="outCodice"></span></p>
+            <p><strong>Costo biglietto:</strong> <span id="outPrezzo"></span></p>
         </div>
     </div>
-
-
 
     <script src="script.js"></script>
 </body>
